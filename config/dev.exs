@@ -29,6 +29,10 @@ config :phx_k8s, PhxK8sWeb.Endpoint,
       cd: Path.expand("../assets", __DIR__)
     ]
   ]
+config :peerage,
+  via: Peerage.Via.List,
+  node_list: [:"phx_k8s@127.0.0.1"],
+  log_results: false
 
 # ## SSL Support
 #

@@ -1,20 +1,17 @@
 # PhxK8s
 
-To start your Phoenix server:
+## How to run on k8s
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
+https://itnext.io/elixir-plus-kubernetes-part-1-80129eab14f0
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+``` bash
+DB_URL=ecto://postgres:postgres@localhost/phx_k8s_dev \
+RELEASE_COOKIE=AbqvZMtgcN3eZfdfPgujTi21SPKzmBfuF9vlbajqX332arGsW4cUfYRLOaIsAUGbEgm \
+SECRET_KEY_BASE=AbqvZMtgcN3eZPgujTi21SPKzmBfuF9vlbajqX332arGsW4cUfYRLOaIsAUGbEgm \
+HOSTNAME=127.0.0.1 \
+SERVICE_NAME=localhost.svc \
+APP_HOST=localhost \
+PORT=4000 \
+_build/prod/rel/phx_k8s/bin/phx_k8s start
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+```
